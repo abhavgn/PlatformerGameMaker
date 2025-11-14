@@ -29,3 +29,32 @@ if (place_meeting(x, y + vsp, obj_platform)) {
     on_ground = false;
 }
 y += vsp;
+
+
+
+
+
+// --- GML Code for Step Event (Checking for a Fall) ---
+
+// 1. Define the Death Zone Y-Coordinate
+// Set to 2200, which is below your room height of 2160.
+var _death_y = 2200;
+
+// 2. Define the Respawn Coordinates (The Start Point in the level)
+// You need to confirm the desired X/Y coordinates for the start of rm_play1.
+// Using the placeholder 100, 100 from our previous example.
+var _respawn_x = 128;
+var _respawn_y = 1888;
+
+// 3. Check if the player has fallen below the Death Zone
+if (y > _death_y)
+{
+    // A. Move the Player to the Respawn Point
+    x = _respawn_x;
+    y = _respawn_y;
+
+    // B. Stop all Movement
+    // Use the speed variables you use for player movement (hspeed/vspeed or hsp/vsp).
+    hspeed = 0;
+    vspeed = 0;
+}
