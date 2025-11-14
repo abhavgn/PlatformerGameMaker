@@ -7,3 +7,7 @@ move_speed = 4;    // Horizontal movement speed
 
 // Collision flags
 on_ground = false;
+
+// --- Variables for Damage/Invincibility ---
+invincible = false; // Is the player currently immune to damage?
+flash_alpha = 1;   // The current alpha (opacity) for the sprite flash effect
