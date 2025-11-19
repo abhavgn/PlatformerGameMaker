@@ -1,51 +1,25 @@
-// GML Code for Collision with obj_baddie
+// --- Collision with Enemy ---
 
-// --- 1. Set the Respawn Coordinates ---
-// NOTE: Change 100 and 100 to the actual X and Y coordinates 
-// of your player's start point within the room rm_play1.
-var _respawn_x = 128;
-var _respawn_y = 1888;
-
-// --- 2. Move the Player to the Respawn Point ---
-x = _respawn_x;
-y = _respawn_y;
-
-// --- 3. Stop all Movement ---
-// Assuming you use hspeed/vspeed, or custom hsp/vsp variables for movement.
-// Use the variable names you use for player movement!
-hspeed = 0; // Standard built-in horizontal speed
-vspeed = 0; // Standard built-in vertical speed
-
-// If you use custom speed variables (common in platformers), use these instead:
-// hsp = 0;
-// vsp = 0;
-
-
-
-
-// GML Code for Collision with obj_baddie
-
-// ONLY proceed if the player is NOT already invincible
+// IMPORTANT: Everything must be inside this check!
+// If invincible is TRUE (Shield is on), this entire block is SKIPPED.
 if (invincible == false)
 {
-    // 1. Define the Respawn Coordinates (UPDATED)
+    // 1. Define Respawn Coordinates
     var _respawn_x = 128;
     var _respawn_y = 1888;
 
-    // 2. Move the Player to the Respawn Point
+    // 2. Move Player (Respawn)
     x = _respawn_x;
     y = _respawn_y;
 
-    // 3. Stop all Movement
-    // Use the speed variables you use for player movement (hspeed/vspeed or hsp/vsp).
+    // 3. Stop Movement
     hspeed = 0;
     vspeed = 0;
     
-    // --- INVINCIBILITY LOGIC ---
-    
-    // 4. Start Invincibility
+    // 4. Apply "Mercy" Invincibility (So you don't die instantly again)
     invincible = true;
-    
-    // 5. Set Alarm 0 for 2 seconds (120 steps at 60 FPS)
-    alarm[0] = 120; 
+    alarm[0] = 120; // 2 seconds of flashing
 }
+
+// If we ARE invincible (Shield is on), the code basically does nothing,
+// allowing you to walk right through the enemy!
