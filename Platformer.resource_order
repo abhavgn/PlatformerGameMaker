@@ -18,6 +18,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_baddie","order":4,"path":"objects/obj_baddie/obj_baddie.yy",},
+    {"name":"obj_checkpoint","order":8,"path":"objects/obj_checkpoint/obj_checkpoint.yy",},
     {"name":"obj_gengar","order":2,"path":"objects/obj_gengar/obj_gengar.yy",},
     {"name":"obj_platform","order":1,"path":"objects/obj_platform/obj_platform.yy",},
     {"name":"obj_powerup_jump","order":5,"path":"objects/obj_powerup_jump/obj_powerup_jump.yy",},
@@ -30,6 +31,8 @@
     {"name":"left","order":9,"path":"sprites/left/left.yy",},
     {"name":"right","order":10,"path":"sprites/right/right.yy",},
     {"name":"spr_baddie","order":5,"path":"sprites/spr_baddie/spr_baddie.yy",},
+    {"name":"spr_checkpoint_claimed","order":17,"path":"sprites/spr_checkpoint_claimed/spr_checkpoint_claimed.yy",},
+    {"name":"spr_checkpoint_unclaimed","order":16,"path":"sprites/spr_checkpoint_unclaimed/spr_checkpoint_unclaimed.yy",},
     {"name":"spr_gengar","order":3,"path":"sprites/spr_gengar/spr_gengar.yy",},
     {"name":"spr_platform","order":1,"path":"sprites/spr_platform/spr_platform.yy",},
     {"name":"spr_powerup_jump","order":12,"path":"sprites/spr_powerup_jump/spr_powerup_jump.yy",},

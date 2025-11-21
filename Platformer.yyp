@@ -36,6 +36,7 @@
   "name":"Platformer",
   "resources":[
     {"id":{"name":"obj_baddie","path":"objects/obj_baddie/obj_baddie.yy",},},
+    {"id":{"name":"obj_checkpoint","path":"objects/obj_checkpoint/obj_checkpoint.yy",},},
     {"id":{"name":"obj_gengar","path":"objects/obj_gengar/obj_gengar.yy",},},
     {"id":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
@@ -51,6 +52,8 @@
     {"id":{"name":"left","path":"sprites/left/left.yy",},},
     {"id":{"name":"right","path":"sprites/right/right.yy",},},
     {"id":{"name":"spr_baddie","path":"sprites/spr_baddie/spr_baddie.yy",},},
+    {"id":{"name":"spr_checkpoint_claimed","path":"sprites/spr_checkpoint_claimed/spr_checkpoint_claimed.yy",},},
+    {"id":{"name":"spr_checkpoint_unclaimed","path":"sprites/spr_checkpoint_unclaimed/spr_checkpoint_unclaimed.yy",},},
     {"id":{"name":"spr_gengar","path":"sprites/spr_gengar/spr_gengar.yy",},},
     {"id":{"name":"spr_platform","path":"sprites/spr_platform/spr_platform.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},

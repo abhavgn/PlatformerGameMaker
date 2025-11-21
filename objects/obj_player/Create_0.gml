@@ -27,3 +27,7 @@ stamina_recharge_rate = 0.45; // Slightly reduced recharge rate (from 1)
 
 // --- Powerup Integration Variable ---
 is_powerup_speed_active = false; // Flag to check if the Speed Powerup is running
+
+// --- Checkpoint/Respawn Setup (New) ---
+global.respawn_x = 128;  // Default starting X position
+global.respawn_y = 1888; // Default starting Y position
