@@ -4,21 +4,20 @@
 // If invincible is TRUE (Shield is on), this entire block is SKIPPED.
 if (invincible == false)
 {
-    // 1. Define Respawn Coordinates
-    var _respawn_x = 128;
-    var _respawn_y = 1888;
-
-    // 2. Move Player (Respawn)
-    x = _respawn_x;
-    y = _respawn_y;
-
-    // 3. Stop Movement
+    // 1. Respawn at the last saved checkpoint
+    x = global.respawn_x;
+    y = global.respawn_y;
+    
+    // 2. Stop movement
     hspeed = 0;
     vspeed = 0;
-    
-    // 4. Apply "Mercy" Invincibility (So you don't die instantly again)
+
+    // 3. Add Mercy Invincibility
     invincible = true;
-    alarm[0] = 120; // 2 seconds of flashing
+    alarm[0] = 120; 
+    
+    // 4. Reset color
+    image_blend = c_white;
 }
 
 // If we ARE invincible (Shield is on), the code basically does nothing,

@@ -37,6 +37,7 @@
   "resources":[
     {"id":{"name":"obj_baddie","path":"objects/obj_baddie/obj_baddie.yy",},},
     {"id":{"name":"obj_checkpoint","path":"objects/obj_checkpoint/obj_checkpoint.yy",},},
+    {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
     {"id":{"name":"obj_gengar","path":"objects/obj_gengar/obj_gengar.yy",},},
     {"id":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

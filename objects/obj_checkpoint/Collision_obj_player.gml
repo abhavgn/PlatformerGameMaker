@@ -1,7 +1,7 @@
 // Check if this checkpoint is ready to be claimed
 if (is_active == true)
 {
-    // 1. Update the global variables to the player's current position (other.x is the player's x)
+    // 1. Update the global variables to the player's current position
     global.respawn_x = other.x;
     global.respawn_y = other.y;
     

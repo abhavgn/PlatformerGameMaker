@@ -118,16 +118,12 @@ y += vsp;
 // Room Height is 2160, so Death Zone Y is 2200.
 var _death_y = 2200;
 
-// Respawn Coordinates (UPDATED)
-var _respawn_x = 128;
-var _respawn_y = 1888;
-
 // Check if the player has fallen below the Death Zone
 if (y > _death_y)
 {
-    // A. Move the Player to the Respawn Point
-    x = _respawn_x;
-    y = _respawn_y;
+    // A. Move the Player to the Respawn Point (using global checkpoint)
+    x = global.respawn_x;
+    y = global.respawn_y;
 
     // B. Stop all Movement
     hspeed = 0;
