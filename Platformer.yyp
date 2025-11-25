@@ -62,6 +62,7 @@
     {"id":{"name":"spr_powerup_shield","path":"sprites/spr_powerup_shield/spr_powerup_shield.yy",},},
     {"id":{"name":"spr_powerup_speed","path":"sprites/spr_powerup_speed/spr_powerup_speed.yy",},},
     {"id":{"name":"spr_shield_active","path":"sprites/spr_shield_active/spr_shield_active.yy",},},
+    {"id":{"name":"spr_starfieldbg","path":"sprites/spr_starfieldbg/spr_starfieldbg.yy",},},
     {"id":{"name":"spr_startb","path":"sprites/spr_startb/spr_startb.yy",},},
     {"id":{"name":"spr_startbg","path":"sprites/spr_startbg/spr_startbg.yy",},},
     {"id":{"name":"up","path":"sprites/up/up.yy",},},

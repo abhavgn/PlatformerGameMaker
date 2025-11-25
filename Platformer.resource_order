@@ -40,6 +40,7 @@
     {"name":"spr_powerup_shield","order":14,"path":"sprites/spr_powerup_shield/spr_powerup_shield.yy",},
     {"name":"spr_powerup_speed","order":13,"path":"sprites/spr_powerup_speed/spr_powerup_speed.yy",},
     {"name":"spr_shield_active","order":15,"path":"sprites/spr_shield_active/spr_shield_active.yy",},
+    {"name":"spr_starfieldbg","order":18,"path":"sprites/spr_starfieldbg/spr_starfieldbg.yy",},
     {"name":"spr_startb","order":4,"path":"sprites/spr_startb/spr_startb.yy",},
     {"name":"spr_startbg","order":2,"path":"sprites/spr_startbg/spr_startbg.yy",},
     {"name":"up","order":8,"path":"sprites/up/up.yy",},
