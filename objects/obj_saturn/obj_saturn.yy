@@ -1,18 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_game_manager",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_saturn",
+  "eventList":[],
   "managed":true,
-  "name":"obj_game_manager",
+  "name":"obj_saturn",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
-  "persistent":true,
+  "parentObjectId":{
+    "name":"obj_parent_planet",
+    "path":"objects/obj_parent_planet/obj_parent_planet.yy",
+  },
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_saturngif",
+    "path":"sprites/spr_saturngif/spr_saturngif.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

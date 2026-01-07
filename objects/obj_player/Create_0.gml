@@ -5,6 +5,10 @@ grv = 0.5;         // Gravity
 jmp = -10;         // Jump strength
 move_speed = 4;    // Horizontal movement speed
 
+// --- Ladder Variables ---
+is_climbing = false;
+climb_speed = 3;
+
 last_hdir = 1; // 1 = Right, -1 = Left. (Assumes character starts facing right)
 
 // Collision flags

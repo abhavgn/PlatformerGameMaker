@@ -1,13 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_sun_center",
+  "%Name":"obj_startup_manager",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_floating_visual","path":"objects/obj_floating_visual/obj_floating_visual.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_sun_center",
+  "name":"obj_startup_manager",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_sungif",
-    "path":"sprites/spr_sungif/spr_sungif.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

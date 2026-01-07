@@ -1,12 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_planet_spawner",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_title",
+  "eventList":[],
   "managed":true,
-  "name":"obj_planet_spawner",
+  "name":"obj_title",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_title",
+    "path":"sprites/spr_title/spr_title.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

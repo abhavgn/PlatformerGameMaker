@@ -1,1 +1,0 @@
-scr_elastic_collision(self, other);
