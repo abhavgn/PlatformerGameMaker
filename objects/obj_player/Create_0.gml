@@ -5,6 +5,12 @@ grv = 0.5;         // Gravity
 jmp = -10;         // Jump strength
 move_speed = 4;    // Horizontal movement speed
 
+// Initialize the global respawn coordinates so the game knows where to send you
+global.respawn_x = x; 
+global.respawn_y = y;
+
+is_sprinting = false;
+
 // --- Ladder Variables ---
 is_climbing = false;
 climb_speed = 3;

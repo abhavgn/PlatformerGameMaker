@@ -36,11 +36,30 @@ current_stamina = clamp(current_stamina, 0, max_stamina);
 
 // --- 2. MOVEMENT AND PHYSICS ---
 
+// LADDER DETECTION ADDED HERE
+var _on_ladder = place_meeting(x, y, obj_ladder);
+
+// Start climbing if touching ladder and pressing up or down
+if (_on_ladder && (keyboard_check(vk_up) || keyboard_check(vk_down))) {
+    is_climbing = true;
+}
+
+// Stop climbing if we leave the ladder or jump
+if (!_on_ladder || keyboard_check_pressed(vk_space)) {
+    is_climbing = false;
+}
+
 // Horizontal input (uses the calculated speed)
 hsp = (keyboard_check(vk_right) - keyboard_check(vk_left)) * _current_speed_for_hsp;
 
-// Apply gravity
-vsp += grv;
+// Apply gravity (ONLY if not climbing)
+if (!is_climbing) {
+    vsp += grv;
+} else {
+    // Climbing vertical movement
+    vsp = (keyboard_check(vk_down) - keyboard_check(vk_up)) * 4;
+    hsp = hsp * 0.5; // Optional: slow down side-to-side movement while on ladder
+}
 
 // Jumping
 if (keyboard_check_pressed(vk_space) && on_ground) {
@@ -51,8 +70,14 @@ if (keyboard_check_pressed(vk_space) && on_ground) {
 // 🔥 SPRITE ASSIGNMENT LOGIC (FIXED IDLE) 🔥
 // ----------------------------------------------------
 
+// LADDER SPRITE ADDED HERE
+if (is_climbing) 
+{
+    sprite_index = spr_climb; // Ensure you have a sprite named spr_climb
+    image_speed = (vsp != 0) ? 1 : 0; // Only animate if moving
+}
 // 1. Vertical State (Jumping or Falling)
-if (!on_ground) 
+else if (!on_ground) 
 {
     if (vsp < 0) 
     {
