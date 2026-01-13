@@ -73,7 +73,7 @@ if (keyboard_check_pressed(vk_space) && on_ground) {
 // LADDER SPRITE ADDED HERE
 if (is_climbing) 
 {
-    sprite_index = spr_climb; // Ensure you have a sprite named spr_climb
+    //sprite_index = spr_climb; // Ensure you have a sprite named spr_climb
     image_speed = (vsp != 0) ? 1 : 0; // Only animate if moving
 }
 // 1. Vertical State (Jumping or Falling)
