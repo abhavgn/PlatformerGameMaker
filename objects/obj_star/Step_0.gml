@@ -1,13 +1,23 @@
-// 1. Movement
-x -= star_speed;
+if (is_vertical == true) {
+    // --- VERTICAL MOVEMENT (Top to Bottom) ---
+    y += star_speed;
 
-// 2. Wrap around screen
-if (x < -32) {
-    x = room_width + 32;
-    y = random(room_height);
+    // Wrap around bottom to top
+    if (y > room_height + 32) {
+        y = -32;
+        x = random(room_width);
+    }
+} 
+else {
+    // --- HORIZONTAL MOVEMENT (Right to Left) ---
+    x -= star_speed;
+
+    // Wrap around left to right
+    if (x < -32) {
+        x = room_width + 32;
+        y = random(room_height);
+    }
 }
 
-// 3. 🔥 THE TWINKLE EFFECT 🔥
-// This waves the alpha between 0.2 and 1.0
-// Increase "500" to make it blink slower, decrease it to blink faster
-image_alpha = 0.6 + 0.4 * sin((current_time / 500) + twinkle_offset);
+// --- TWINKLE (Stays the same for both) ---
+image_alpha = 0.8 + 0.2 * sin((current_time / 1000) + twinkle_offset);

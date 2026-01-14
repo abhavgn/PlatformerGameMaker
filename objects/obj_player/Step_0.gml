@@ -185,14 +185,10 @@ if (keyboard_check_pressed(ord("Z")))
         
         // Activate Invincibility and Visuals
         invincible = true;
-        image_blend = c_aqua;
+        //image_blend = c_aqua;
         
         // Set Timer for 10 Seconds (600 steps)
         alarm[3] = 600; 
-        
-        // Safety measure: Cancel Super Jump and Speed Boost timers
-        alarm[1] = -1; 
-        alarm[2] = -1;
     }
 }
 
@@ -205,7 +201,7 @@ if (keyboard_check_pressed(ord("X")))
         
         jmp = -20;    // 1. Apply effect
         alarm[1] = 300;         // 2. Set timer (5 sec)
-        image_blend = c_lime;   // 3. Visual feedback
+        //image_blend = c_lime;   // 3. Visual feedback
     }
 }
 
@@ -221,6 +217,6 @@ if (keyboard_check_pressed(ord("C")))
         current_stamina = max_stamina;  // 3. Stamina instantly fills
         alarm[2] = 300;                 // 4. Set timer (5 sec)
         
-        image_blend = c_orange;         // 5. Visual feedback
+        //image_blend = c_orange;         // 5. Visual feedback
     }
 }

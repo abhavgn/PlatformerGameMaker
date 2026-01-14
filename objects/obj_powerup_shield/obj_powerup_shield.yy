@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_powerup_shield",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_powerup_shield",
   "overriddenProperties":[],
@@ -28,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_powerup_shield",
-    "path":"sprites/spr_powerup_shield/spr_powerup_shield.yy",
+    "name":"spr_shield_active",
+    "path":"sprites/spr_shield_active/spr_shield_active.yy",
   },
   "spriteMaskId":null,
   "visible":true,
