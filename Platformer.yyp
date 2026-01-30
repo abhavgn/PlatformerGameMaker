@@ -35,6 +35,7 @@
   },
   "name":"Platformer",
   "resources":[
+    {"id":{"name":"fnt_story","path":"fonts/fnt_story/fnt_story.yy",},},
     {"id":{"name":"obj_asteroid","path":"objects/obj_asteroid/obj_asteroid.yy",},},
     {"id":{"name":"obj_baddie","path":"objects/obj_baddie/obj_baddie.yy",},},
     {"id":{"name":"obj_checkpoint","path":"objects/obj_checkpoint/obj_checkpoint.yy",},},
@@ -58,11 +59,13 @@
     {"id":{"name":"obj_star","path":"objects/obj_star/obj_star.yy",},},
     {"id":{"name":"obj_startb","path":"objects/obj_startb/obj_startb.yy",},},
     {"id":{"name":"obj_startup_manager","path":"objects/obj_startup_manager/obj_startup_manager.yy",},},
+    {"id":{"name":"obj_story_text","path":"objects/obj_story_text/obj_story_text.yy",},},
     {"id":{"name":"obj_sun","path":"objects/obj_sun/obj_sun.yy",},},
     {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},},
     {"id":{"name":"obj_ufo","path":"objects/obj_ufo/obj_ufo.yy",},},
     {"id":{"name":"rm_play1","path":"rooms/rm_play1/rm_play1.yy",},},
     {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
+    {"id":{"name":"rm_story","path":"rooms/rm_story/rm_story.yy",},},
     {"id":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
     {"id":{"name":"scr_elastic_collision","path":"scripts/scr_elastic_collision/scr_elastic_collision.yy",},},
     {"id":{"name":"mus_start","path":"sounds/mus_start/mus_start.yy",},},
@@ -104,8 +107,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
-    {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
+    {"roomId":{"name":"rm_story","path":"rooms/rm_story/rm_story.yy",},},
     {"roomId":{"name":"rm_play1","path":"rooms/rm_play1/rm_play1.yy",},},
+    {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
