@@ -220,3 +220,24 @@ if (keyboard_check_pressed(ord("C")))
         //image_blend = c_orange;         // 5. Visual feedback
     }
 }
+
+// If moving but NOT sprinting, increase the timer
+if (!keyboard_check(vk_shift)) {
+    sprint_hint_timer += 1;
+} else if (keyboard_check(vk_shift)) {
+    // If they figure it out, reset the timer and hide the hint
+    sprint_hint_timer = 0;
+    show_sprint_hint = false;
+}
+
+// Trigger the hint if they hit the threshold
+if (sprint_hint_timer >= sprint_hint_threshold) {
+    show_sprint_hint = true;
+}
+
+// Smoothly fade the hint alpha in and out
+if (show_sprint_hint) {
+    hint_alpha = min(hint_alpha + 0.05, 1);
+} else {
+    hint_alpha = max(hint_alpha - 0.05, 0);
+}

@@ -1,32 +1,47 @@
-// 1. Draw the black background
+// 1. Draw Black Background
 draw_set_alpha(1);
 draw_set_color(c_black);
 draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
 
-// 2. Set up the text style
-draw_set_font(fnt_story); 
+var _cx = display_get_gui_width() / 2;
+var _cy = display_get_gui_height() / 2;
 draw_set_color(c_white);
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
 
-var _x = display_get_gui_width() / 2;
-var _y = display_get_gui_height() / 2;
+// 2. STATE: STORY
+if (game_state == "story") {
+    draw_set_font(fnt_story); 
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    
+    // Draw the typewriter text
+    draw_text_ext_transformed(_cx, _cy, display_text, 54, 900, 1, 1, 0);
+} 
 
-// Since your font is 48, we use a scale of 1
-var _scale = 1;   
-var _spacing = 54;  // Slightly larger than the font size so lines don't touch
-var _width = 900;   // Give it plenty of room to breathe
+// 3. STATE: INSTRUCTIONS
+else if (game_state == "instructions") {
+    // Draw the image you just generated!
+    // We center it by subtracting half its width/height (assuming origin is top-left)
+    var _spr_w = sprite_get_width(spr_instructions);
+    var _spr_h = sprite_get_height(spr_instructions);
+    
+    // Draw sprite scaled slightly if needed (here set to 1)
+    draw_sprite(spr_instructions, 0, _cx - (_spr_w/2), _cy - (_spr_h/2));
+}
 
-draw_text_ext_transformed(_x, _y, display_text, _spacing, _width, _scale, _scale, 0);
-
-// 3. The "Press Space" prompt
+// 4. THE "PACING" PROMPT (Pulsing Text)
 if (show_prompt) {
-    // Fade the prompt in slowly using alpha
-    // This makes it "pulse" softly
-    var _alpha = (sin(current_time / 400) * 0.5 + 0.5); 
+    // This math creates a smooth "breathing" effect for the transparency
+    var _alpha = sin(current_time / 400) * 0.5 + 0.5; 
     draw_set_alpha(_alpha);
     
-    draw_text_transformed(_x, display_get_gui_height() - 100, "PRESS SPACE TO START MISSION", 0.6, 0.6, 0);
+    draw_set_font(fnt_story); // Or your main font
+    draw_set_halign(fa_center);
     
-    draw_set_alpha(1); // Reset alpha so it doesn't mess up other things
+    if (game_state == "story") {
+        draw_text_transformed(_cx, display_get_gui_height() - 80, "PRESS SPACE TO CONTINUE", 0.6, 0.6, 0);
+    } else {
+        draw_text_transformed(_cx, display_get_gui_height() - 80, "PRESS SPACE TO DEPLOY", 0.8, 0.8, 0);
+    }
+    
+    draw_set_alpha(1); // Reset alpha
 }

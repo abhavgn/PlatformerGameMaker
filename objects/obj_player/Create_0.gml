@@ -5,6 +5,11 @@ grv = 0.5;         // Gravity
 jmp = -10;         // Jump strength
 move_speed = 4;    // Horizontal movement speed
 
+sprint_hint_timer = 0;
+sprint_hint_threshold = 60 * 10; // 10 seconds of gameplay
+show_sprint_hint = false;
+hint_alpha = 0; // For a smooth fade-in effect
+
 // Initialize the global respawn coordinates so the game knows where to send you
 global.respawn_x = x; 
 global.respawn_y = y;

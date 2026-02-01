@@ -63,6 +63,7 @@
     {"id":{"name":"obj_sun","path":"objects/obj_sun/obj_sun.yy",},},
     {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},},
     {"id":{"name":"obj_ufo","path":"objects/obj_ufo/obj_ufo.yy",},},
+    {"id":{"name":"rm_instructions","path":"rooms/rm_instructions/rm_instructions.yy",},},
     {"id":{"name":"rm_play1","path":"rooms/rm_play1/rm_play1.yy",},},
     {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"id":{"name":"rm_story","path":"rooms/rm_story/rm_story.yy",},},
@@ -80,6 +81,7 @@
     {"id":{"name":"spr_comet_spark","path":"sprites/spr_comet_spark/spr_comet_spark.yy",},},
     {"id":{"name":"spr_comet","path":"sprites/spr_comet/spr_comet.yy",},},
     {"id":{"name":"spr_earthgif","path":"sprites/spr_earthgif/spr_earthgif.yy",},},
+    {"id":{"name":"spr_instructions","path":"sprites/spr_instructions/spr_instructions.yy",},},
     {"id":{"name":"spr_ladder","path":"sprites/spr_ladder/spr_ladder.yy",},},
     {"id":{"name":"spr_moongif","path":"sprites/spr_moongif/spr_moongif.yy",},},
     {"id":{"name":"spr_neptunegif","path":"sprites/spr_neptunegif/spr_neptunegif.yy",},},
@@ -110,6 +112,7 @@
     {"roomId":{"name":"rm_story","path":"rooms/rm_story/rm_story.yy",},},
     {"roomId":{"name":"rm_play1","path":"rooms/rm_play1/rm_play1.yy",},},
     {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
+    {"roomId":{"name":"rm_instructions","path":"rooms/rm_instructions/rm_instructions.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -1,3 +1,5 @@
+game_state = "story"; // Starts with the story text
+
 // The full story message
 message = "EMERGENCY! ALIEN FLEET DETECTED IN SECTOR 7.\nI MUST REACH THE JUMP-SHIP TO WARN EARTH\nBEFORE THE SIGNAL IS JAMMED!";
 
