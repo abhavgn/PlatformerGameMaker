@@ -16,7 +16,7 @@ if (hint_alpha > 0) {
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
     draw_set_font(-1); // Use small default font
-    draw_text(_gx, _gy, "ADVICE: HOLD SHIFT TO SPRINT");
+    draw_text(_gx, _gy, "HINT: IF YOU HOLD SHIFT, YOU CAN SPRINT");
     
     draw_set_alpha(1); // Always reset alpha!
 }

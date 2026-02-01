@@ -5,6 +5,7 @@ grv = 0.5;         // Gravity
 jmp = -10;         // Jump strength
 move_speed = 4;    // Horizontal movement speed
 
+// Sprint Hint Setup
 sprint_hint_timer = 0;
 sprint_hint_threshold = 60 * 10; // 10 seconds of gameplay
 show_sprint_hint = false;

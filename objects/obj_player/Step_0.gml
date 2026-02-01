@@ -240,4 +240,4 @@ if (show_sprint_hint) {
     hint_alpha = min(hint_alpha + 0.05, 1);
 } else {
     hint_alpha = max(hint_alpha - 0.05, 0);
-}
+}_hint_done = true;
