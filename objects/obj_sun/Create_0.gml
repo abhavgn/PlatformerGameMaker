@@ -9,3 +9,5 @@ target_y = 448;
 
 global.player_lives = 3;
 global.max_lives = 3;
+
+global.music_muted = false;
