@@ -1,19 +1,24 @@
-/// obj_baddie – Step Event
-
-// Move
+// 1. Move
 x += dir * spd;
 
-// Check for crossing the right boundary
+// 2. Boundary Logic
 if (x > patrol_right) {
-    x   = patrol_right;  // clamp position
-    dir = -1;            // reverse
+    x   = patrol_right;  
+    dir = -1;            
 }
 
-// Check for crossing the left boundary
 if (x < patrol_left) {
-    x   = patrol_left;   // clamp position
-    dir = 1;             // reverse
+    x   = patrol_left;   
+    dir = 1;             
 }
 
-// Update sprite facing
-image_xscale = (dir > 0) ? 1 : -1;
+// 3. Sprite Swap Logic
+// If moving right (1), use spr_bad. If moving left (-1), use spr_bad2.
+if (dir == 1) {
+    sprite_index = spr_bad2;
+} else {
+    sprite_index = spr_bad;
+}
+
+// Ensure xscale stays at 1 so we don't accidentally double-flip the art
+image_xscale = 1;

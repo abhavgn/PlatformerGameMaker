@@ -20,3 +20,9 @@ if (hint_alpha > 0) {
     
     draw_set_alpha(1); // Always reset alpha!
 }
+
+// Draw Lives in the top left corner
+for (var i = 0; i < global.player_lives; i++) {
+    // Draw a small heart or mini-character sprite for each life
+    draw_sprite_ext(spr_characteridleR, 0, 50 + (i * 40), 50, 0.5, 0.5, 0, c_white, 1);
+}

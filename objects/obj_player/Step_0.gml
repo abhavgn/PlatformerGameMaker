@@ -49,8 +49,22 @@ if (!_on_ladder || keyboard_check_pressed(vk_space)) {
     is_climbing = false;
 }
 
-// Horizontal input (uses the calculated speed)
+// 1. Calculate base speed from keys
 hsp = (keyboard_check(vk_right) - keyboard_check(vk_left)) * _current_speed_for_hsp;
+
+// 2. PRECISE Point Check (Checks 1 pixel below the player's center)
+// This prevents the "early hit" at the edges.
+var _conveyor = instance_position(x, bbox_bottom + 1, obj_platform_conveyor);
+
+if (_conveyor != noone) {
+    var _push_force = -2; // Smooth airport speed
+    
+    if (hsp == 0) {
+        hsp = _push_force; // Slide while idle
+    } else {
+        hsp += _push_force; // Resist while running
+    }
+}
 
 // Apply gravity (ONLY if not climbing)
 if (!is_climbing) {
@@ -67,53 +81,84 @@ if (keyboard_check_pressed(vk_space) && on_ground) {
 }
 
 // ----------------------------------------------------
-// 🔥 SPRITE ASSIGNMENT LOGIC (FIXED IDLE) 🔥
+// 🔥 SPRITE ASSIGNMENT LOGIC (ADJUSTED ANIMATION SPEED) 🔥
 // ----------------------------------------------------
 
-// LADDER SPRITE ADDED HERE
+// ----------------------------------------------------
+// 🔥 CLIMBING LOGIC (NO SPRITE WORKAROUND) 🔥
+// ----------------------------------------------------
 if (is_climbing) 
 {
-    //sprite_index = spr_climb; // Ensure you have a sprite named spr_climb
-    image_speed = (vsp != 0) ? 1 : 0; // Only animate if moving
-}
-// 1. Vertical State (Jumping or Falling)
-else if (!on_ground) 
-{
-    if (vsp < 0) 
+    // 1. Use Idle sprite based on the last direction faced
+    if (last_hdir == -1) sprite_index = spr_characteridleL;
+    else sprite_index = spr_characteridleR;
+
+    // 2. Add a "climbing" wobble
+    if (vsp != 0) 
     {
-        // Moving up
-        sprite_index = up;
+        // This tilts the sprite back and forth slightly as you climb
+        image_angle = sin(current_time / 100) * 10; 
+        
+        // Make the idle arms "vibrate" a little to show effort
+        image_speed = 0.5; 
     } 
     else 
     {
-        // Moving down/falling
-        sprite_index = down;
+        // Stop wobbling when staying still on the ladder
+        image_angle = 0;
+        image_speed = 0;
+        image_index = 0;
     }
-    // Ensure animation speed is running during movement/jumping
-    image_speed = 1; 
 }
-// 2. Horizontal State (Running or Idle)
+else 
+{
+    // Reset the angle when not on a ladder
+    image_angle = 0;
+    
+    // ... (rest of your existing jumping/running/idle logic)
+}
+
+// 1. VERTICAL STATE (Jumping or Falling)
+if (!on_ground) 
+{
+    if (last_hdir == -1) sprite_index = spr_characterrunL;
+    else sprite_index = spr_characterrunR;
+    
+    // Slow down the "wind-blown" look while in the air
+    image_speed = 0; 
+}
+// 2. HORIZONTAL STATE (Running or Idle)
 else 
 {
     if (hsp != 0) 
     {
-        // Running Left or Right
-        sprite_index = (hsp > 0) ? right : left;
-        last_hdir = sign(hsp);
-        // Ensure animation speed is running during movement
-        image_speed = 1; 
+        // RUNNING: Switch based on current movement
+        if (hsp < 0) {
+            sprite_index = spr_characterrunL;
+            last_hdir = -1;
+        } else {
+            sprite_index = spr_characterrunR;
+            last_hdir = 1;
+        }
+        
+        // ADJUST THIS: 0.2 is nice and steady. 
+        // If sprinting (hsp > 4), it bumps to 0.4.
+        image_speed = (abs(hsp) > 4) ? 0.6 : 0.4; 
     } 
     else 
     {
-        // Idle
-        sprite_index = demo;
+        // IDLE: Facing last direction
+        if (last_hdir == -1) {
+            sprite_index = spr_characteridleL;
+        } else {
+            sprite_index = spr_characteridleR;
+        }
         
-        // FIX: Stop the animation when idle
+        // Stop animation on the idle frame
         image_speed = 0;
-        image_index = 1; // Lock it to the first frame
+        image_index = 0; 
     }
 }
-
 // ----------------------------------------------------
 
 // Horizontal collision
@@ -140,25 +185,43 @@ y += vsp;
 
 // --- 3. FALL DETECTION / RESPAWN ---
 
-// Room Height is 2160, so Death Zone Y is 2200.
-var _death_y = 2200;
+// --- UNIFIED DAMAGE & DEATH LOGIC ---
 
-// Check if the player has fallen below the Death Zone
-if (y > _death_y)
-{
-    // A. Move the Player to the Respawn Point (using global checkpoint)
-    x = global.respawn_x;
-    y = global.respawn_y;
+var _take_damage = false;
 
-    // B. Stop all Movement
-    hspeed = 0;
-    vspeed = 0;
-
-    // C. Apply Mercy Invincibility
-    invincible = true;
-    alarm[0] = 120; 
+// A. Check for Baddie Collision
+if (place_meeting(x, y, obj_baddie) && !invincible) {
+    _take_damage = true;
 }
 
+// B. Check for Laser Collision (using your existing laser logic)
+// This assumes you check this inside the Player or the Laser object
+// if (collision_line_with_laser && !invincible) _take_damage = true;
+
+// C. Check for Fall Damage (Your existing Y threshold)
+if (y > 2200) {
+    _take_damage = true;
+}
+
+// --- EXECUTE DAMAGE ---
+if (_take_damage) {
+    global.player_lives -= 1;
+    
+    if (global.player_lives > 0) {
+        // Respawn Logic
+        x = global.respawn_x;
+        y = global.respawn_y;
+        hsp = 0;
+        vsp = 0;
+        
+        // Apply Mercy Invincibility
+        invincible = true;
+        alarm[0] = 120; 
+    } else {
+        // Game Over Logic
+        room_goto(rm_lose); 
+    }
+}
 
 // --- 4. INVINCIBILITY FLASH CALCULATION ---
 

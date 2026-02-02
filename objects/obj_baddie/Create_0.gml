@@ -1,12 +1,11 @@
-/// obj_baddie – Create Event
-
 // 1. Movement parameters
-spd = 2;     // pixels per step
-dir = 1;     // 1 = moving right, -1 = moving left
+spd = 2;      
+dir = 1;      // 1 = right, -1 = left
 
-// 2. Manual patrol boundaries (set these to your platform's edges)
-patrol_left  = 768;  // X coordinate of left edge
-patrol_right = 1344;  // X coordinate of right edge
+// 2. Patrol boundaries
+patrol_left  = 768;  
+patrol_right = 1344; 
 
-// 3. Initial visual flip
-image_xscale = 1;
+// 3. Initial Sprite Setup
+sprite_index = spr_bad; // Start facing right
+image_speed = 0.3;      // Match the slower walk cycle of your hero
